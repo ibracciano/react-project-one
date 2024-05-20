@@ -14,7 +14,7 @@ const Panier = () => {
             Total produit : <strong>{cartList.length}</strong>
           </span>
           <span>
-            Prix total : <strong> $ {total}</strong>
+            Prix total : <strong> $ {total.toFixed(2)}</strong>
           </span>
         </p>
         <div className="grid grid-cols-2 gap-4 text-sm text-center md:text-base md:grid-cols-1">
