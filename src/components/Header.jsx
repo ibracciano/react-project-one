@@ -9,6 +9,7 @@ const Header = () => {
 
   const [isDarkMode, setDarkMode] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+  const [query, setQuery] = useState("");
   // console.log(theme);
 
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const Header = () => {
     }
   };
 
-  const [query, setQuery] = useState("");
+
   function handleSubmit(e) {
     e.preventDefault();
     navigate(`/recherche/${query}`);
@@ -162,7 +163,7 @@ const Header = () => {
 
         <form className="hidden md:block w-[30%] border-2 px-2 py-1" onSubmit={handleSubmit}>
           <input
-            value={query}
+            value={query.trim().toLowerCase()}
             onChange={(e) => setQuery(e.target.value)}
             type="text"
             placeholder="Recherchez par categorie"
